@@ -1,5 +1,7 @@
 <html>
   <head>
+    <script src="https://use.typekit.net/xaz3mqx.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart','table']});
@@ -219,7 +221,7 @@
           </script>
   </head>
   <body>
-    <div id="daterange_div" style="text-align:center">
+    <div id="daterange_div" style="text-align:center; background:black; padding:5; color:white; font-family: "gira-sans",sans-serif">
       <form action = "#">
         START
         <select id = "month1">
@@ -263,10 +265,11 @@
           <option value = "2017">2017</option>
           <option value = "2018">2018</option>
         </select>
-    <div id="dashboard" style="text-align:center">
-      <div id="revchart_div" style="float: left"></div>
-      <div id="custcatchart_div" style="float: left"></div>
-      <div id="diffchart_div" style="float: left"></div>
+      </div>
+    <div id="dashboard" style="flex:1;text-align:center">
+      <div id="revchart_div" style="display: inline-block"></div>
+      <div id="custcatchart_div" style="display: inline-block"></div>
+      <div id="diffchart_div" style="display: inline-block"></div>
       <div id="data_check"></div>
     </div>
     <div id="revtable_div" style="text-align:center"></div>
