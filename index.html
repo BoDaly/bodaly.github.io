@@ -47,17 +47,54 @@
         var month2Value = document.getElementById("month2").value;
         var year1Value = document.getElementById("year1").value;
         var year2Value = document.getElementById("year2").value;
+        var startDate = new Date(year1Value,month1Value,1);
+        var endDate = new Date(year2Value,month2Value,monthDays.getValue(0,parseInt(month2Value)));
+
+// --- BASE CHART
+        var dateData = new google.visualization.DataTable();
+        dateData.addColumn('string','Category')
+        dateData.addColumn('string','Type')
+        dateData.addColumn('number','Order Number')
+        dateData.addColumn('string','Order Entry')
+        dateData.addColumn('number','Difficulty')
+        dateData.addColumn('string','On Time?')
+        dateData.addColumn('string','Revision?')
+        dateData.addColumn('date','Timestamp')
+        dateData.addColumn('string','Additional Comments')
+        dateData.addColumn('number','Mockups')
+        dateData.addColumn('string','Artist')
+
+        var y = 0; // Line Counter
+        var z = 0; // Column
+        var b = 0; // Row
+        var addData = [];
+        while (y<countRows){
+          if (data.getValue(y, 7) >= startDate & data.getValue(y, 7) <= endDate){
+            while (addData.length<dateData.getNumberOfColumns()){
+              addData.push(data.getValue(y,z));
+              z++
+            }
+          }
+          else {
+            y++
+          }
+          if(addData.length>0){
+            dateData.insertRows(b,[addData]);
+            addData = [];
+            z = 0;
+            b++
+            y++
+          }
+        }
 
 // --- REVISIONS CHART
         var countIsRev = 0;
         var countNotRev = 0;
         var i = 0;
         var x = 0;
-        var startDate = new Date(year1Value,month1Value,1);
-        var endDate = new Date(year2Value,month2Value,monthDays.getValue(0,parseInt(month2Value)));
         while (x<countRows){
           if (data.getValue(x, 6) == 'No' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-            countNotRev++;
+            countNotRev = countNotRev + data.getValue(x, 9);
             x++;
           }
           else {
@@ -66,7 +103,7 @@
       };
           while (i<countRows){
             if (data.getValue(i, 6) == 'Yes' & data.getValue(i, 7) >= startDate & data.getValue(i, 7) <= endDate){
-              countIsRev++;
+              countIsRev = countIsRev + data.getValue(i, 9);
               i++;
             }
             else {
@@ -78,44 +115,6 @@
           revData.addColumn('number','Value');
           revData.addRow(['New Mockup',countNotRev]);
           revData.addRow(['Revision',countIsRev]);
-
-// --- BASE CHART
-        var dateData = new google.visualization.DataTable();
-          dateData.addColumn('string','Category')
-          dateData.addColumn('string','Type')
-          dateData.addColumn('number','Order Number')
-          dateData.addColumn('string','Order Entry')
-          dateData.addColumn('number','Difficulty')
-          dateData.addColumn('string','On Time?')
-          dateData.addColumn('string','Revision?')
-          dateData.addColumn('date','Timestamp')
-          dateData.addColumn('string','Additional Comments')
-          dateData.addColumn('number','Mockups')
-          dateData.addColumn('string','Artist')
-
-
-        var y = 0; // Line Counter
-        var z = 0; // Column
-        var b = 0; // Row
-        var addData = [];
-          while (y<countRows){
-            if (data.getValue(y, 7) >= startDate & data.getValue(y, 7) <= endDate){
-              while (addData.length<dateData.getNumberOfColumns()){
-                addData.push(data.getValue(y,z));
-                z++
-                }
-            }
-            else {
-              y++
-            }
-            if(addData.length>0){
-              dateData.insertRows(b,[addData]);
-              addData = [];
-              z = 0;
-              b++
-              y++
-            }
-          }
 
 // --- DIFFICULTY CHART
         var ezCount = 0;
@@ -266,10 +265,16 @@
         </select>
         END
       </div>
-    <div id="dashboard" style="flex:1;text-align:center;background:white">
-      <div id="revchart_div" style="display: inline-block"></div>
-      <div id="custcatchart_div" style="display: inline-block"></div>
-      <div id="diffchart_div" style="display: inline-block"></div>
+    <div id="dashboard" style="flex:1;text-align:center;background:white;font-family:gira-sans;padding:10">
+      <div style="display: inline-block; width:400;font-size:10">
+        <div id="revchart_div"></div> ^Number of Mockups
+      </div>
+      <div style="display: inline-block; width:400;font-size:10">
+        <div id="custcatchart_div"></div>^Number of Orders
+      </div>
+      <div style="display: inline-block; width:400;font-size:10">
+        <div id="diffchart_div"></div>^Number of Orders
+      </div>
       <div id="data_check"></div>
     </div>
     <div id="revtable_div" style="text-align:center;padding:10;padding-bottom:20;background:white"></div>
