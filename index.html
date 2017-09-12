@@ -1,275 +1,274 @@
 <html>
-<head>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-  google.charts.load('current', {'packages':['corechart','table']});
-  google.charts.setOnLoadCallback(initForm);
-  google.charts.setOnLoadCallback(drawTable);
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart','table']});
+      google.charts.setOnLoadCallback(initForm);
+      google.charts.setOnLoadCallback(drawTable);
 
-  function initForm() {
-    document.getElementById("month1").selectedIndex = 1;
-    document.getElementById("month2").selectedIndex = 12;
-    document.getElementById("year1").selectedIndex = 1;
-    document.getElementById("year2").selectedIndex = 2;
-    document.getElementById("month1").onchange = drawTable;
-    document.getElementById("month2").onchange = drawTable;
-    document.getElementById("year1").onchange = drawTable;
-    document.getElementById("year2").onchange = drawTable;
-  }
-  function drawTable() {
-    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18zmHVLDOiXAZoUNUnocj44VbVNwNmQ9TVmi7nyNMhE0/gviz/tq?gid=1676619464');
-    query.send(handleQueryResponse);
+      function initForm() {
+        document.getElementById("month1").selectedIndex = 1;
+        document.getElementById("month2").selectedIndex = 12;
+        document.getElementById("year1").selectedIndex = 1;
+        document.getElementById("year2").selectedIndex = 2;
+        document.getElementById("month1").onchange = drawTable;
+        document.getElementById("month2").onchange = drawTable;
+        document.getElementById("year1").onchange = drawTable;
+        document.getElementById("year2").onchange = drawTable;
+      }
+      function drawTable() {
+        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18zmHVLDOiXAZoUNUnocj44VbVNwNmQ9TVmi7nyNMhE0/gviz/tq?gid=1676619464');
+        query.send(handleQueryResponse);
 
-  }
-  function handleQueryResponse(response) {
-    var data = response.getDataTable();
-    var countRows = data.getNumberOfRows();
-    var countCol = data.getNumberOfColumns();
+      }
+      function handleQueryResponse(response) {
+        var data = response.getDataTable();
+        var countRows = data.getNumberOfRows();
+        var countCol = data.getNumberOfColumns();
 
 // --- DAYS OF MONTH TABLE
-    var monthDays = new google.visualization.DataTable();
-    monthDays.addColumn('number','January')
-    monthDays.addColumn('number','February')
-    monthDays.addColumn('number','March')
-    monthDays.addColumn('number','April')
-    monthDays.addColumn('number','May')
-    monthDays.addColumn('number','June')
-    monthDays.addColumn('number','July')
-    monthDays.addColumn('number','August')
-    monthDays.addColumn('number','September')
-    monthDays.addColumn('number','October')
-    monthDays.addColumn('number','November')
-    monthDays.addColumn('number','December')
-    monthDays.addRow([31,28,31,30,31,30,31,31,30,31,30,31]);
-    var month1Value = document.getElementById("month1").value;
-    var month2Value = document.getElementById("month2").value;
-    var year1Value = document.getElementById("year1").value;
-    var year2Value = document.getElementById("year2").value;
+        var monthDays = new google.visualization.DataTable();
+          monthDays.addColumn('number','January')
+          monthDays.addColumn('number','February')
+          monthDays.addColumn('number','March')
+          monthDays.addColumn('number','April')
+          monthDays.addColumn('number','May')
+          monthDays.addColumn('number','June')
+          monthDays.addColumn('number','July')
+          monthDays.addColumn('number','August')
+          monthDays.addColumn('number','September')
+          monthDays.addColumn('number','October')
+          monthDays.addColumn('number','November')
+          monthDays.addColumn('number','December')
+          monthDays.addRow([31,28,31,30,31,30,31,31,30,31,30,31]);
+        var month1Value = document.getElementById("month1").value;
+        var month2Value = document.getElementById("month2").value;
+        var year1Value = document.getElementById("year1").value;
+        var year2Value = document.getElementById("year2").value;
 
+// --- REVISIONS CHART
+        var countIsRev = 0;
+        var countNotRev = 0;
+        var i = 0;
+        var x = 0;
+        var startDate = new Date(year1Value,month1Value,1);
+        var endDate = new Date(year2Value,month2Value,monthDays.getValue(0,parseInt(month2Value)));
+        while (x<countRows){
+          if (data.getValue(x, 6) == 'No' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            countNotRev++;
+            x++;
+          }
+          else {
+            x++
+          }
+      };
+          while (i<countRows){
+            if (data.getValue(i, 6) == 'Yes' & data.getValue(i, 7) >= startDate & data.getValue(i, 7) <= endDate){
+              countIsRev++;
+              i++;
+            }
+            else {
+              i++
+            }
+        };
+        var revData = new google.visualization.DataTable();
+          revData.addColumn('string','Category');
+          revData.addColumn('number','Value');
+          revData.addRow(['New Mockup',countNotRev]);
+          revData.addRow(['Revision',countIsRev]);
 
 // --- BASE CHART
-    var dateData = new google.visualization.DataTable();
-    dateData.addColumn('string','Category')
-    dateData.addColumn('string','Type')
-    dateData.addColumn('number','Order Number')
-    dateData.addColumn('string','Order Entry')
-    dateData.addColumn('number','Difficulty')
-    dateData.addColumn('string','On Time?')
-    dateData.addColumn('string','Revision?')
-    dateData.addColumn('date','Timestamp')
-    dateData.addColumn('string','Additional Comments')
-    dateData.addColumn('number','Designs')
-    dateData.addColumn('number','Styles')
-    dateData.addColumn('string','Artist')
+        var dateData = new google.visualization.DataTable();
+          dateData.addColumn('string','Category')
+          dateData.addColumn('string','Type')
+          dateData.addColumn('number','Order Number')
+          dateData.addColumn('string','Order Entry')
+          dateData.addColumn('number','Difficulty')
+          dateData.addColumn('string','On Time?')
+          dateData.addColumn('string','Revision?')
+          dateData.addColumn('date','Timestamp')
+          dateData.addColumn('string','Additional Comments')
+          dateData.addColumn('number','Designs')
+          dateData.addColumn('number','Styles')
+          dateData.addColumn('string','Artist')
 
 
-    var y = 0; // Line Counter
-    var z = 0; // Column
-    var b = 0; // Row
-    var addData = [];
-    while (y<countRows){
-      if (data.getValue(y, 7) >= startDate & data.getValue(y, 7) <= endDate){
-        while (addData.length<dateData.getNumberOfColumns()){
-          addData.push(data.getValue(y,z));
-          z++
-        }
-      }
-      else {
-        y++
-      }
-      if(addData.length>0){
-        dateData.insertRows(b,[addData]);
-        addData = [];
-        z = 0;
-        b++
-        y++
-      }
-    }
-// --- REVISIONS CHART
-    var countIsRev = 0;
-    var countNotRev = 0;
-    var i = 0;
-    var x = 0;
-    var startDate = new Date(year1Value,month1Value,1);
-    var endDate = new Date(year2Value,month2Value,monthDays.getValue(0,parseInt(month2Value)));
-    while (x<countRows){
-      if (data.getValue(x, 6) == 'No' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        countNotRev++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
-    while (i<countRows){
-      if (data.getValue(i, 6) == 'Yes' & data.getValue(i, 7) >= startDate & data.getValue(i, 7) <= endDate){
-        countIsRev++;
-        i++;
-      }
-      else {
-        i++
-      }
-    };
-    var revData = new google.visualization.DataTable();
-    revData.addColumn('string','Category');
-    revData.addColumn('number','Value');
-    revData.addRow(['New Mockup',countNotRev]);
-    revData.addRow(['Revision',countIsRev]);
+        var y = 0; // Line Counter
+        var z = 0; // Column
+        var b = 0; // Row
+        var addData = [];
+          while (y<countRows){
+            if (data.getValue(y, 7) >= startDate & data.getValue(y, 7) <= endDate){
+              while (addData.length<dateData.getNumberOfColumns()){
+                addData.push(data.getValue(y,z));
+                z++
+                }
+            }
+            else {
+              y++
+            }
+            if(addData.length>0){
+              dateData.insertRows(b,[addData]);
+              addData = [];
+              z = 0;
+              b++
+              y++
+            }
+          }
 
 // --- DIFFICULTY CHART
-    var ezCount = 0;
-    var mdCount = 0;
-    var hdCount = 0;
-    x = 0;
-    console.log(data.getValue(x, 4))
-    while (x<countRows){
-      if (data.getValue(x, 4) > 0 & data.getValue(x, 4) <= 3 & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        ezCount++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
-    x = 0;
-    while (x<countRows){
-      if (data.getValue(x, 4) > 3 & data.getValue(x, 4) <= 7 & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        mdCount++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
-    x = 0;
-    while (x<countRows){
-      if (data.getValue(x, 4) > 7 & data.getValue(x, 4) <= 10 & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        hdCount++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
+        var ezCount = 0;
+        var mdCount = 0;
+        var hdCount = 0;
+        x = 0;
+        console.log(data.getValue(x, 4))
+        while (x<countRows){
+          if (data.getValue(x, 4) > 0 & data.getValue(x, 4) <= 3 & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            ezCount++;
+            x++;
+          }
+          else {
+            x++
+          }
+        };
+        x = 0;
+        while (x<countRows){
+          if (data.getValue(x, 4) > 3 & data.getValue(x, 4) <= 7 & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            mdCount++;
+            x++;
+          }
+          else {
+            x++
+          }
+        };
+        x = 0;
+        while (x<countRows){
+          if (data.getValue(x, 4) > 7 & data.getValue(x, 4) <= 10 & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            hdCount++;
+            x++;
+          }
+          else {
+            x++
+          }
+        };
 
-    var diffData = new google.visualization.DataTable();
-    diffData.addColumn('string','Category');
-    diffData.addColumn('number','Value');
-    diffData.addRow(['Easy',ezCount])
-    diffData.addRow(['Medium',mdCount])
-    diffData.addRow(['Hard',hdCount])
+        var diffData = new google.visualization.DataTable();
+        diffData.addColumn('string','Category');
+        diffData.addColumn('number','Value');
+        diffData.addRow(['Easy',ezCount])
+        diffData.addRow(['Medium',mdCount])
+        diffData.addRow(['Hard',hdCount])
 
 // --- CUSTOM CATEGORY CHART
-    var countIsStk = 0;
-    var countIsFill = 0;
-    var countIsCust = 0;
-    x = 0;
+        var countIsStk = 0;
+        var countIsFill = 0;
+        var countIsCust = 0;
+        x = 0;
 
-    while (x<countRows){
-      if (data.getValue(x, 0) == 'Custom' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        countIsCust++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
-    x = 0;
-    while (x<countRows){
-      if (data.getValue(x, 0) == 'Fill' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        countIsFill++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
-    x = 0;
-    while (x<countRows){
-      if (data.getValue(x, 0) == 'Stock' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
-        countIsStk++;
-        x++;
-      }
-      else {
-        x++
-      }
-    };
-    var custCat = new google.visualization.DataTable();
-    custCat.addColumn('string','Category');
-    custCat.addColumn('number','Value');
-    custCat.addRow(['Custom',countIsCust]);
-    custCat.addRow(['Fill',countIsFill]);
-    custCat.addRow(['Stock',countIsStk]);
-
+        while (x<countRows){
+          if (data.getValue(x, 0) == 'Custom' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            countIsCust++;
+            x++;
+          }
+          else {
+            x++
+          }
+      };
+      x = 0;
+        while (x<countRows){
+          if (data.getValue(x, 0) == 'Fill' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            countIsFill++;
+            x++;
+          }
+          else {
+            x++
+          }
+      };
+      x = 0;
+        while (x<countRows){
+          if (data.getValue(x, 0) == 'Stock' & data.getValue(x, 7) >= startDate & data.getValue(x, 7) <= endDate){
+            countIsStk++;
+            x++;
+          }
+          else {
+            x++
+          }
+      };
+      var custCat = new google.visualization.DataTable();
+        custCat.addColumn('string','Category');
+        custCat.addColumn('number','Value');
+        custCat.addRow(['Custom',countIsCust]);
+        custCat.addRow(['Fill',countIsFill]);
+        custCat.addRow(['Stock',countIsStk]);
 // --- FORMATTERS
-    var numFormat = new google.visualization.NumberFormat(
-      {pattern:'######'}
-    );
-    numFormat.format(dateData,2)
-
+        var numFormat = new google.visualization.NumberFormat(
+          {pattern:'######'}
+        );
+        numFormat.format(dateData,2)
 // --- DRAW CHARTS
-    var diffChart = new google.visualization.PieChart(document.getElementById('diffchart_div'));
-    var custCatChart = new google.visualization.PieChart(document.getElementById('custcatchart_div'));
-    var revTable = new google.visualization.Table(document.getElementById('revtable_div'));
-    var revChart = new google.visualization.PieChart(document.getElementById('revchart_div'));
-    revChart.draw(revData);
-    revTable.draw(dateData);
-    custCatChart.draw(custCat);
-    diffChart.draw(diffData)
-  }
-  </script>
-</head>
-<body>
-  <div id="daterange_div" style="text-align:center">
-    <form action = "#">
-      START
-      <select id = "month1">
-        <option value = "">Month</option>
-        <option value = "0">January</option>
-        <option value = "1">February</option>
-        <option value = "2">March</option>
-        <option value = "3">April</option>
-        <option value = "4">May</option>
-        <option value = "5">June</option>
-        <option value = "6">July</option>
-        <option value = "7">August</option>
-        <option value = "8">September</option>
-        <option value = "9">October</option>
-        <option value = "10">November</option>
-        <option value = "11">December</option>
-      </select>
-      <select id = "year1">
-        <option value = "">Year</option>
-        <option value = "2017">2017</option>
-        <option value = "2018">2018</option>
-      </select>
-      &nbsp;-&nbsp;END
-      <select id = "month2">
-        <option value = "">Month</option>
-        <option value = "0">January</option>
-        <option value = "1">February</option>
-        <option value = "2">March</option>
-        <option value = "3">April</option>
-        <option value = "4">May</option>
-        <option value = "5">June</option>
-        <option value = "6">July</option>
-        <option value = "7">August</option>
-        <option value = "8">September</option>
-        <option value = "9">October</option>
-        <option value = "10">November</option>
-        <option value = "11">December</option>
-      </select>
-      <select id = "year2">
-        <option value = "">Year</option>
-        <option value = "2017">2017</option>
-        <option value = "2018">2018</option>
-      </select>
-      <div id="dashboard" style="text-align:center">
-        <div id="revchart_div" style="float: left"></div>
-        <div id="custcatchart_div" style="float: left"></div>
-        <div id="diffchart_div" style="float: left"></div>
-        <div id="data_check"></div>
-      </div>
-      <div id="revtable_div" style="text-align:center"></div>
-    </body>
-    </html>
+        var diffChart = new google.visualization.PieChart(document.getElementById('diffchart_div'));
+        var custCatChart = new google.visualization.PieChart(document.getElementById('custcatchart_div'));
+        var revTable = new google.visualization.Table(document.getElementById('revtable_div'));
+        var revChart = new google.visualization.PieChart(document.getElementById('revchart_div'));
+          revChart.draw(revData);
+          revTable.draw(dateData);
+          custCatChart.draw(custCat);
+          diffChart.draw(diffData)
+          //document.getElementById("data_check").innerHTML = z //switch on to check data
+        }
+          </script>
+  </head>
+  <body>
+    <div id="daterange_div" style="text-align:center">
+      <form action = "#">
+        START
+        <select id = "month1">
+          <option value = "">Month</option>
+          <option value = "0">January</option>
+          <option value = "1">February</option>
+          <option value = "2">March</option>
+          <option value = "3">April</option>
+          <option value = "4">May</option>
+          <option value = "5">June</option>
+          <option value = "6">July</option>
+          <option value = "7">August</option>
+          <option value = "8">September</option>
+          <option value = "9">October</option>
+          <option value = "10">November</option>
+          <option value = "11">December</option>
+        </select>
+        <select id = "year1">
+          <option value = "">Year</option>
+          <option value = "2017">2017</option>
+          <option value = "2018">2018</option>
+        </select>
+        &nbsp;-&nbsp;END
+        <select id = "month2">
+          <option value = "">Month</option>
+          <option value = "0">January</option>
+          <option value = "1">February</option>
+          <option value = "2">March</option>
+          <option value = "3">April</option>
+          <option value = "4">May</option>
+          <option value = "5">June</option>
+          <option value = "6">July</option>
+          <option value = "7">August</option>
+          <option value = "8">September</option>
+          <option value = "9">October</option>
+          <option value = "10">November</option>
+          <option value = "11">December</option>
+        </select>
+        <select id = "year2">
+          <option value = "">Year</option>
+          <option value = "2017">2017</option>
+          <option value = "2018">2018</option>
+        </select>
+    <div id="dashboard" style="text-align:center">
+      <div id="revchart_div" style="float: left"></div>
+      <div id="custcatchart_div" style="float: left"></div>
+      <div id="diffchart_div" style="float: left"></div>
+      <div id="data_check"></div>
+    </div>
+    <div id="revtable_div" style="text-align:center"></div>
+  </body>
+</html>
