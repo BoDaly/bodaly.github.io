@@ -12,7 +12,8 @@ function pullData(response){
 }
 
 function initTable(data){
-  var userData = new RegExp('[A-Z][a-z]');
+  console.log(sessionStorage.key);
+  var userData = sessionStorage.key);
   var clientView = new google.visualization.DataView(data);
     clientView.setRows(data.getFilteredRows([{column:4, value:sessionStorage.key}]));
   drawTable(clientView,"table_div");
