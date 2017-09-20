@@ -15,9 +15,12 @@ function validate(data){
   var inputUser = document.getElementById('username').value;
   var usrPass = data.getValue(findValue(data,inputUser),1);
   var usrName = data.getValue(findValue(data,inputUser),0);
+  var client = data.getValue(findValue(data,inputUser),2);
+
   if (inputUser = usrName && inputPass == usrPass){
-    sessionStorage.key = 'Loyalist';
-    window.location.replace("externalapts.html")
+    sessionStorage.setItem('key',client);
+    console.log(sessionStorage.getItem('key'));
+    window.location.assign("externalapts.html")
   }
   else{
     window.alert('Wrong Username or Password')
