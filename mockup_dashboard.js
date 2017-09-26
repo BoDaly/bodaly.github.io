@@ -97,6 +97,14 @@ function countTotal(data,colIndex,colToSum,checkSt){
   }
   return countIs;
 }
+function dateChart(data){
+  var result = google.visualization.data.group(
+  data,
+  [7],
+  [{'column': 9, 'aggregation': google.visualization.data.sum, 'type': 'number'}]
+  );
+  drawColumnChart(result,"datebarchart_div")
+}
 function diffChart(data){
   var diffData = new google.visualization.DataTable();
   diffData.addColumn('string','Category');
@@ -130,13 +138,11 @@ function typeChart(data){
 }
 function revChart(data){
   var dateData = data;
-  var countIsRev = countTotal(dateData,6,9,"Yes")
-  var countNotRev = countTotal(dateData,6,9,"No")
   var revData = new google.visualization.DataTable();
     revData.addColumn('string','Category');
     revData.addColumn('number','Value');
-    revData.addRow(['New Mockup',countNotRev]);
-    revData.addRow(['Revision',countIsRev]);
+    revData.addRow(['New Mockup',countTotal(dateData,6,9,"No")]);
+    revData.addRow(['Revision',countTotal(dateData,6,9,"Yes")]);
   drawPieChart(revData,"revchart_div")
 }
 function initTable(data,startDate,endDate){
@@ -176,12 +182,18 @@ function initTable(data,startDate,endDate){
       y++
     }
   };
+  controller(dateData);
+  drawTable(dateData,"table_div");
+} // Initial Data Table
+function controller(data){
+  var dateData = data;
+  dateChart(dateData);
   typeChart(dateData);
   diffChart(dateData);
   custCatChart(dateData);
   revChart(dateData);
-  drawTable(dateData,"table_div");
-} // Initial Data Table
+
+}
 function drawTable(data,table_divname){
   var chartData = data;
   var table = new google.visualization.Table(document.getElementById(table_divname));
@@ -191,4 +203,12 @@ function drawPieChart(data,table_divname){
   var chartData = data;
   var pieChart = new google.visualization.PieChart(document.getElementById(table_divname));
   pieChart.draw(data)
+}
+function drawColumnChart(data,table_divname){
+  var chartData = data;
+  var columnChart = new google.visualization.ColumnChart(document.getElementById(table_divname));
+  var option = {
+    bar: { groupWidth: '95%' }
+  }
+  columnChart.draw(chartData,option)
 }
