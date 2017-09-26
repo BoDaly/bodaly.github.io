@@ -17,7 +17,7 @@ function validate(data){
   var usrName = data.getValue(findValue(data,inputUser),0);
   var client = data.getValue(findValue(data,inputUser),2);
 
-  if (inputUser = usrName && inputPass == usrPass){
+  if (inputUser == usrName && inputPass == usrPass){
     sessionStorage.setItem('key',client);
     console.log(sessionStorage.getItem('key'));
     window.location.assign("externalapts.html")
