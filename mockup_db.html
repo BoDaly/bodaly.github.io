@@ -13,7 +13,7 @@ MOCKUPS<img src="https://fg-cronos.herokuapp.com/assets/fg_color_logo-ed6170c7c3
 <div id="daterange_div">
 <form action = "#">
   START
-  <select id = "month1">
+  <select id = "month1" onchange="setDay(1)">
     <option value = "">Month</option>
     <option value = "0">January</option>
     <option value = "1">February</option>
@@ -27,6 +27,8 @@ MOCKUPS<img src="https://fg-cronos.herokuapp.com/assets/fg_color_logo-ed6170c7c3
     <option value = "9">October</option>
     <option value = "10">November</option>
     <option value = "11">December</option>
+  </select>
+  <select id = "days1">
   </select>
   <select id = "year1">
     <option value = "">Year</option>
@@ -34,7 +36,7 @@ MOCKUPS<img src="https://fg-cronos.herokuapp.com/assets/fg_color_logo-ed6170c7c3
     <option value = "2018">2018</option>
   </select>
   &nbsp;-&nbsp;
-  <select id = "month2">
+  <select id = "month2" onchange="setDay(2)">
     <option value = "">Month</option>
     <option value = "0">January</option>
     <option value = "1">February</option>
@@ -48,6 +50,8 @@ MOCKUPS<img src="https://fg-cronos.herokuapp.com/assets/fg_color_logo-ed6170c7c3
     <option value = "9">October</option>
     <option value = "10">November</option>
     <option value = "11">December</option>
+  </select>
+  <select id = "days2">
   </select>
   <select id = "year2">
     <option value = "">Year</option>
@@ -56,7 +60,7 @@ MOCKUPS<img src="https://fg-cronos.herokuapp.com/assets/fg_color_logo-ed6170c7c3
   </select>
   END
 </div>
-<div class="dashboard">
+<div class="dashboard" id="dashboard">
 <div class="chart">
   <div id="revchart_div"></div> ^Number of Mockups
 </div>
@@ -72,7 +76,7 @@ MOCKUPS<img src="https://fg-cronos.herokuapp.com/assets/fg_color_logo-ed6170c7c3
 <div class="chart">
   <div id="datebarchart_div"></div>^Number of Mockups
 </div>
-<div id="mockqty_div"></div>
+<div id="total_mockups_done"></div>
 </div>
 <div id="table_div"></div>
 <p style="text-align:center;color:white;font-family:gira-sans">-Mockup Statistics-</p>

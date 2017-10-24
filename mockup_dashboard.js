@@ -7,41 +7,32 @@ google.charts.setOnLoadCallback(endDate);
 function googleSheet(){
   var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/18zmHVLDOiXAZoUNUnocj44VbVNwNmQ9TVmi7nyNMhE0/gviz/tq?gid=1676619464');
   query.send(collector)
+
 }
 function setForm(){
   document.getElementById("month1").selectedIndex = 1;
   document.getElementById("month2").selectedIndex = 12;
   document.getElementById("year1").selectedIndex = 1;
   document.getElementById("year2").selectedIndex = 2;
-  document.getElementById("month1").onchange = googleSheet;
-  document.getElementById("month2").onchange = googleSheet;
   document.getElementById("year1").onchange = googleSheet;
   document.getElementById("year2").onchange = googleSheet;
+  document.getElementById("days1").onchange = googleSheet;
+  document.getElementById("days2").onchange = googleSheet;
+  setDay(1);
+  setDay(2);
 }
 function startDate(){
   var month1Value = document.getElementById("month1").value;
   var year1Value = document.getElementById("year1").value;
-  var date1 = new Date(year1Value,month1Value,1);
+  var days1Value = document.getElementById("days1").value;
+  var date1 = new Date(year1Value,month1Value,days1Value,0,0,0,0);
   return date1
 }
 function endDate(){
-  var monthDays = new google.visualization.DataTable();
-    monthDays.addColumn('number','January')
-    monthDays.addColumn('number','February')
-    monthDays.addColumn('number','March')
-    monthDays.addColumn('number','April')
-    monthDays.addColumn('number','May')
-    monthDays.addColumn('number','June')
-    monthDays.addColumn('number','July')
-    monthDays.addColumn('number','August')
-    monthDays.addColumn('number','September')
-    monthDays.addColumn('number','October')
-    monthDays.addColumn('number','November')
-    monthDays.addColumn('number','December')
-    monthDays.addRow([31,28,31,30,31,30,31,31,30,31,30,31]);
   var month2Value = document.getElementById("month2").value;
   var year2Value = document.getElementById("year2").value;
-  var date2 = new Date(year2Value,month2Value,monthDays.getValue(0,parseInt(month2Value)));
+  var days2Value = document.getElementById("days2").value;
+  var date2 = new Date(year2Value,month2Value,days2Value,23,59,59);
   return date2
 }
 function collector(response){
@@ -100,7 +91,7 @@ function countTotal(data,colIndex,colToSum,checkSt){
 function dateChart(data){
   var result = google.visualization.data.group(
   data,
-  [7],
+  [{'column':7, 'modifier':simpDate, 'type':'date'}],
   [{'column': 9, 'aggregation': google.visualization.data.sum, 'type': 'number'}]
   );
   drawColumnChart(result,"datebarchart_div")
@@ -136,6 +127,10 @@ function typeChart(data){
     typeData.addRow(['Screen Print',countOrder(dateData,1,"SCPR")]);
   drawPieChart(typeData,"typechart_div")
 }
+function mockupsDone(){
+  var card = document.getElementById('total_mockups_done');
+  card.innerHTML = "";
+}
 function revChart(data){
   var dateData = data;
   var revData = new google.visualization.DataTable();
@@ -165,6 +160,8 @@ function initTable(data,startDate,endDate){
   var b = 0; // Row
   var addData = [];
   while (y < countRows){
+    console.log(startDate+endDate);
+    console.log(getDate(data,15));
     if (getDate(data,y) >= startDate & getDate(data,y) <= endDate){
       while (addData.length < countCol){
         addData.push(data.getValue(y,z));
@@ -192,7 +189,6 @@ function controller(data){
   diffChart(dateData);
   custCatChart(dateData);
   revChart(dateData);
-
 }
 function drawTable(data,table_divname){
   var chartData = data;
@@ -211,4 +207,55 @@ function drawColumnChart(data,table_divname){
     bar: { groupWidth: '95%' }
   }
   columnChart.draw(chartData,option)
+}
+function setDay(init){
+  var months = {
+    0:'January',
+    1:'February',
+    2:'March',
+    3:'April',
+    4:'May',
+    5:'June',
+    6:'July',
+    7:'August',
+    8:'September',
+    9:'October',
+    10:'November',
+    11:'December'
+  };
+  var monthDays = {
+    'January': 31,
+    'February': 28,
+    'March': 31,
+    'April': 30,
+    'May': 31,
+    'June': 30,
+    'July': 31,
+    'August': 31,
+    'September': 30,
+    'October': 31,
+    'November': 30,
+    'December': 31
+  };
+  var days1 = document.getElementById("days1");
+  var days2 = document.getElementById("days2");
+  var month1 = months[document.getElementById("month1").value];
+  var month2 = months[document.getElementById("month2").value];
+  if (init == 1){
+    days1.innerHTML = ""
+    for (i=1;i<=monthDays[month1];i++){
+      days1.innerHTML = days1.innerHTML + '<option value="'+i+'">'+i+'</option>';
+    }
+  }
+  if (init == 2){
+    days2.innerHTML = ""
+    for (i=1;i<=monthDays[month2];i++){
+      days2.innerHTML = days2.innerHTML + '<option value="'+i+'">'+i+'</option>';
+    }
+  }
+  googleSheet()
+}
+function simpDate(date){
+  date.setHours(0,0,0,0);
+  return date;
 }
