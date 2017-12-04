@@ -319,7 +319,8 @@ function submitOrderInfo() {
           "revisions":[{
             "qa_associate":qaAssoc,
             "rollout_artist":roArtist,
-            "styles":styles
+            "styles":Object.assign({},styles),
+            "rev_date": "",
           }],
           "current_rev":0,
           "all_designs":desArray
@@ -599,6 +600,7 @@ function styleUpdate(){
 function nextStyle(sDex,dDex,init){
   var doneBtn = document.getElementById('done_btn');
   if(sDex === styleArray.length){
+    jsonPacket.revisions[jsonPacket.current_rev].rev_date = new Date();
     var header = document.getElementById('header');
     header.innerHTML = '<h1>FINISHED</h1>';
     var body = document.getElementById('body');
@@ -1146,20 +1148,20 @@ function submitNewRev(){
     styles = jsonPacket.revisions[jsonPacket.current_rev].styles;
     var oldRev = jsonPacket.current_rev;
     jsonPacket.current_rev = jsonPacket.current_rev + 1;
-    var revObject = Object.assign({},jsonPacket.revisions[currentRev]);
+    var revObject = JSON.parse(JSON.stringify(jsonPacket.revisions[currentRev]));
     revObject.qa_associate = document.getElementById('associate').value;
     revObject.rollout_artist = document.getElementById('artist').value;
-    for(i=0;i<styleArray.length;i++){
-      for(ii=0;ii<revObject.styles[styleArray[i]].designs.length;ii++){
+    /*for(i=0;i<styleArray.length;i++){
+      for(ii=0;ii<Object.keys(revObject.styles[styleArray[i]].designs).length;ii++){
         revObject.styles[styleArray[i]].designs[desArray[ii]] =
         {'issues':{
           "gen-art":JSON.parse(artCheckPrp),
           "gen-ros":JSON.parse(rosCheckPrp)
         }}
       }
-    }
+    }*/
     jsonPacket.revisions.push(revObject);
-    var ref = firebase.database().ref("orders/"+orderNumber);
+    var ref = firebase.database().ref("orders/"+orderNumber+"/");
     ref.update(jsonPacket);
     nextStyle(0,0,0);
   }
