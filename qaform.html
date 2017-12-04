@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="qaform.css">
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC_QWjbR58KsxvgyghzUNVY35Vgsy3yLco",
+    authDomain: "qa-form-13e48.firebaseapp.com",
+    databaseURL: "https://qa-form-13e48.firebaseio.com",
+    projectId: "qa-form-13e48",
+    storageBucket: "qa-form-13e48.appspot.com",
+    messagingSenderId: "399984815647"
+  };
+  firebase.initializeApp(config);
+  </script>
+  <script type = "text/javascript" src = "qaform.js"></script>
+</head>
+<body onload="loadNewOrder()">
+  <div class="container-fluid main-container noflow" style="background-color:rgb(153,219,255)">
+    <div class="row" style="background-color:black;height:40px">
+      <div class="col-md-12" style="padding:5px">
+        <img src="fullgear_logo_wht-01.svg" style="height:95%;float:right"/>
+        <ul class="nav">
+          <li class="nav-item">
+            <a id="neworder_link" class="nav-link active" href="#!" onclick="activeLink('neworder_link','newrev_link','tools_link')">New Order</a>
+          </li>
+          <li class="nav-item">
+            <a id="newrev_link" class="nav-link a_waiting" href="#!" onclick="activeLink('newrev_link','neworder_link','tools_link')">New Revision</a>
+          </li>
+          <li class="nav-item">
+            <a id="tools_link" class="nav-link disabled" href="#!" onclick="activeLink('tools_link','newrev_link','neworder_link')">Tools</a>
+          </li>
+        </ul>
+    </div>
+    </div>
+    <div id="content" class="row noflow">
+      <!-- NAVIGATION -->
+      <div id="navbar" class="col-md-2 col-shadows" style="background-color:white">
+        <div id="accordian" role='tablist'>
+
+          <div class="list-group col-no-margin">
+            <div id="setup" class="list-group-item active navborder" style="border-radius:0%" role="tab">Setup
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END NAV -->
+      <div class="col-md-10">
+        <div class="row py-4">
+          <div class="col-md-1">
+          </div>
+
+          <!-- BEGIN FORM -->
+          <div id="form_card" class="col-md-10 col-shadows" style="background-color:white">
+            <div class="row dark">
+              <div id="header" class="col-md-12"><h1>ORDER INFO</h1>
+              </div>
+            </div>
+            <div class="row py-2">
+              <div id="body" class="col">
+                <form>
+                  <div class="form-group">
+                    <label for="ordernum">Order Number</label>
+                    <input type="text" class="form-control" id="ordernum" placeholder="e.g.FG123456">
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md">
+                      <label for="associate">QA Associate</label>
+                      <select id="associate" class="form-control">
+                        <option value = "">Choose Associate</option>
+                        <option value = "Nichole">Nichole</option>
+                        <option value = "Jynette">Jynette</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md">
+                      <label for="artist">Roll-Out Artist</label>
+                      <select id="artist" class="form-control">
+                        <option value = "">Choose Artist</option>
+                        <option value = "Simon Avila">Simon Avila</option>
+                        <option value = "Brandon Durfey">Brandon Durfey</option>
+                        <option value = "Dane Jensen">Dane Jensen</option>
+                        <option value = "Kelsy Rice">Kelsy Rice</option>
+                        <option value = "Jynette Tigner">Jynette Tigner</option>
+                        <option value = "Kaitlund Zupanic">Kaitlund Zupanic</option>
+                        <option value = "VLead">VLead</option>
+                        <option value = "InScribe">InScribe</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="designs">Add Designs</label>
+                    <div class="input-group" id="designs">
+                      <button type="button" class="input-group-addon btn btn-success" onclick="addDesigns()">+</button>
+                      <input type="text" id="designName" class="form-control" placeholder="e.g. Black/Gold">
+                    </div>
+                    <div id="designList" class="form-group">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="styles">Add Styles</label>
+                    <div class="input-group" id="styles">
+                      <button id="styles_btn" type="button" class="input-group-addon btn btn-secondary disabled">+</button>
+                      <input id="styleSku" type="text" class="form-control" placeholder="e.g. ST-120J-SUB" onchange="styleUpdate()" readonly>
+                    </div>
+                    <div id="styleList" class="form-group">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <button id="done_btn" type="button" class="btn btn-primary btn-block" style="border-radius:0%" onclick="submitOrderInfo()">Done</button>
+            </div>
+          </div>
+          <!-- END FORM -->
+          <!-- BEGIN MODAL -->
+          <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Applicable Designs</h4>
+                </div>
+                <div id="design_modal" class="modal-body">
+                  <div id="applicables"></div>
+                </div>
+                <div class="modal-footer">
+                  <button id="modal_save" type="button" class="btn btn-primary" onclick="saveAttr()" data-dismiss="modal">Save</button>
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- END MODAL -->
+          <div class="col-md-1">
+          </div>
+</div>
+        </div>
+
+      </div>
+      <div id="footer" class="row noflow" style="position:absolute;height:100%;width:100%">
+    <div class="col-md-2 col-shadows" style="position:relative;background-color:white"></div>
+<div class="col-md-10" style="position:relative"></div>
+</div>
+    </div>
+  </body>
+  </html>
