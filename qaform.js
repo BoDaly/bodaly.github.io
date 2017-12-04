@@ -600,7 +600,11 @@ function styleUpdate(){
 function nextStyle(sDex,dDex,init){
   var doneBtn = document.getElementById('done_btn');
   if(sDex === styleArray.length){
-    jsonPacket.revisions[jsonPacket.current_rev].rev_date = new Date();
+    var currentDate = new Date();
+    var currentRev = jsonPacket.current_rev
+    var ref = firebase.database().ref("orders/"+orderNumber+"/revisions/"+currentRev+"/");
+    var update = {"rev_date":currentDate}
+    ref.update(update);
     var header = document.getElementById('header');
     header.innerHTML = '<h1>FINISHED</h1>';
     var body = document.getElementById('body');
