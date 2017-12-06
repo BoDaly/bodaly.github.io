@@ -320,7 +320,7 @@ function submitOrderInfo() {
             "qa_associate":qaAssoc,
             "rollout_artist":roArtist,
             "styles":Object.assign({},styles),
-            "rev_date": "",
+            "current_rev_date": "",
           }],
           "current_rev":0,
           "all_designs":desArray
@@ -604,6 +604,9 @@ function nextStyle(sDex,dDex,init){
     var currentRev = jsonPacket.current_rev
     var ref = firebase.database().ref("orders/"+orderNumber+"/revisions/"+currentRev+"/");
     var update = {"rev_date":currentDate}
+    ref.update(update);
+    ref = firebase.database().ref("orders/"+orderNumber);
+    update = {"current_rev_date":currentDate}
     ref.update(update);
     var header = document.getElementById('header');
     header.innerHTML = '<h1>FINISHED</h1>';
