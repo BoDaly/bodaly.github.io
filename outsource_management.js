@@ -235,7 +235,7 @@ function showComments(a,status){
   }
 }
 function saveComment(a){
-  var ref = firebase.database().ref(a.parentNode.parentNode.previousSibling.firstChild.nextSibling.innerHTML+'/notes')
+  var ref = firebase.database().ref(a.parentNode.parentNode.previousSibling.firstChild.nextSibling.innerHTML)
   ref.once('value').then(function(snapshot){
     var comment = a.previousSibling.value
     var data = snapshot.val()
@@ -246,9 +246,8 @@ function saveComment(a){
       ref.update(packet)
     }
     else{
-      var packet = {}
-      packet['notes'] = [];
-      packet['notes'].push({'timestamp':Date.now(),'note':comment})
+      var packet = data
+      packet['notes'] =[{'timestamp':Date.now(),'note':comment}]
       ref.update(packet)
     }
     updateComments(a)
