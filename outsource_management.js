@@ -235,7 +235,7 @@ function showComments(a,status){
   }
 }
 function saveComment(a){
-  var ref = firebase.database().ref(a.parentNode.parentNode.previousSibling.firstChild.nextSibling.innerHTML)
+  var ref = firebase.database().ref(a.parentNode.parentNode.previousSibling.firstChild.nextSibling.innerHTML+'/notes')
   ref.once('value').then(function(snapshot){
     var comment = a.previousSibling.value
     var data = snapshot.val()
