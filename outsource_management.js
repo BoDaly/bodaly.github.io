@@ -243,13 +243,13 @@ function saveComment(a){
       var packet = data['notes'];
       packet.push({'timestamp':Date.now(),'note':comment})
       ref = firebase.database().ref(a.parentNode.parentNode.previousSibling.firstChild.nextSibling.innerHTML+'/notes')
-      ref.set(packet)
+      ref.update(packet)
     }
     else{
       var packet = {}
       packet['notes'] = [];
       packet['notes'].push({'timestamp':Date.now(),'note':comment})
-      ref.set(packet)
+      ref.update(packet)
     }
     updateComments(a)
     a.previousSibling.value = ""
