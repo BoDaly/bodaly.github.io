@@ -1,0 +1,14 @@
+<html>
+<head>
+  <script>
+  function go(){
+    let docId = document.getElementByID("docid").value
+    document.location.href = 'https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Read?{"config":"FullgearUB","ident":{"sessionid":"947c6c7c-e7df-48a9-9ce5-46a0d5986af6","superuser":false},"model":{"Id":"'+docId+'"}}"'  
+  }
+  </script>
+</head>
+<body>
+  <p>Doc ID: </p><br/>
+  <input type="text" id="docid"></input><button id="go_button" onclick="go()">go</button>
+</body>
+</html>
