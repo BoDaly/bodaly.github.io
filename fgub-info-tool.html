@@ -3,12 +3,16 @@
   <script>
   function go(){
     let docId = document.getElementById("docid").value
-    window.location = 'https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Read?{	"config": "FullgearUB",	"ident": {		"sessionid": "947c6c7c-e7df-48a9-9ce5-46a0d5986af6",		"superuser": false	},	"model": {		"Id": "'+docId+'"	}}'  
+    document.getElementById("info").innerHTML = `<object type="text/html" data='https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Read?{	"config": "FullgearUB",	"ident": {		"sessionid": "947c6c7c-e7df-48a9-9ce5-46a0d5986af6",		"superuser": false	},	"model": {		"Id": "`+docId+`"	}}'></object>`  
   }
   </script>
 </head>
 <body>
+  <div>
   <p>Doc ID: </p><br/>
   <input type="text" id="docid"></input><button id="go_button" onclick="go()">go</button>
+  </div id="info">
+  <div>
+  </div>
 </body>
 </html>
