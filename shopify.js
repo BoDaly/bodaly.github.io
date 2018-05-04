@@ -110,7 +110,7 @@ function add_to_queue(document_id, fabric, size, cut, qty, details) {
       id: current_variant.id,
       properties: {
         'document_id': document_id,
-        'details': details
+        'details': JSON.stringify(details)
       }
     };
     
