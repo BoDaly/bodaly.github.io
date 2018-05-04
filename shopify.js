@@ -121,6 +121,7 @@ function add_to_queue(document_id, fabric, size, cut, qty, details) {
       dataType: 'json',
       success: function(line_item) { 
         add_queue_to_cart();
+        console.log(line_item);
       },
       error: function(XMLHttpRequest, textStatus) {
         console.log('Error adding');
