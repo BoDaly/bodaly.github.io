@@ -5,7 +5,7 @@
   - Sizes (If your shop does not have already)
     - (e.g. `XS`,`SM`,`MD`,`LG`,`XL`,`2X`,`3X`,`4X`,`5X`,`6X`)
   - Manufacturer
-    - Full Gear
+    - `Full Gear`
 
 <image src = "image (1).png"></image> <br>   
 <b>2) Create Product</b>
