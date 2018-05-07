@@ -6,8 +6,8 @@
     - (e.g. `XS`,`SM`,`MD`,`LG`,`XL`,`2X`,`3X`,`4X`,`5X`,`6X`)
   - Manufacturer
     - Full Gear
-<br>
-<image src = "image (1).png"><br>    
+<br></br>
+<image src = "image (1).png"></image> <br></br>   
 <b>2) Create Product</b>
   - Sku
     - `[FABRIC]-[STYLE]-SUB-[Design Name]` (e.g. `PT-802S-SUB-REDCLUB`)
@@ -16,5 +16,5 @@
   - Apply Size && Manufacturer Attributes
     - Sizes should be set to select and visible
     - Manufacturer should be set to  select and not-visible
-<br>
-<image src = "Pasted image at 2018_05_07 03_38 PM.png">
+<br></br>
+<image src = "Pasted image at 2018_05_07 03_38 PM.png"></image>
