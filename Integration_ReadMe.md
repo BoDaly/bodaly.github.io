@@ -20,6 +20,6 @@
 <image src = "Pasted image at 2018_05_07 03_38 PM.png"></image><br>
 <b>3) Enable REST API and Generate Keys</b>
    - Follow instructions at this link
-     - https://docs.woocommerce.com/document/woocommerce-rest-api/
+     - <a href = "https://docs.woocommerce.com/document/woocommerce-rest-api/">https://docs.woocommerce.com/document/woocommerce-rest-api/</a>
    - Send Consumer Key and Secret Key to:
      - bryan.odaly@fullgear.com
