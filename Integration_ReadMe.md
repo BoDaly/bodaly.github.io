@@ -16,5 +16,10 @@
   - Apply Size && Manufacturer Attributes
     - Sizes should be set to select and visible
     - Manufacturer should be set to  select and not-visible
-<br>
-<image src = "Pasted image at 2018_05_07 03_38 PM.png"></image>
+
+<image src = "Pasted image at 2018_05_07 03_38 PM.png"></image><br>
+<b>3) Enable REST API and Generate Keys</b>
+   - Follow instructions at this link
+     - https://docs.woocommerce.com/document/woocommerce-rest-api/
+   - Send Consumer Key and Secret Key to:
+     - bryan.odaly@fullgear.com
