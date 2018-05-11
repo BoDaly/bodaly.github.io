@@ -25,10 +25,10 @@ Order is placed by email to [customerservice@fullgear.com](mailto:customerservic
 ### Product Design
 
 1) Art assets are delivered to [customerservice@fullgear.com](mailto:customerservice@fullgear.com)
-	- All artwork submitted must be workable ai/pdf file. *(Workable means assets are not flattened or rasterized)*
+- All artwork submitted must be workable ai/pdf file. *(Workable means assets are not flattened or rasterized)*
 2) A Mockup is made by our in-house artist using the delivered assets.
 3) Customer approves or rejects the mockup using our artwork approval portal.
-	- If the mockup is rejected, the notes will be followed for the correction and will be resubmitted for approval via the portal.
+- If the mockup is rejected, the notes will be followed for the correction and will be resubmitted for approval via the portal.
 4) Once approved The order will be sent to production and no changes will be allowed at this point.
 
 ### Delivery
