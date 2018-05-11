@@ -5,7 +5,9 @@ Each on-boarding experience is broken down into 3 parts:
 * Order Entry
 * Product Design
 * Delivery
+
 ***
+
 Each of these parts may be different depending on the <u>level of commitment</u>.<br>
 There are three <u>levels of commitment</u>:
 * [Single Order](#single)
