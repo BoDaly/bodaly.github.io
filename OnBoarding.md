@@ -42,8 +42,8 @@ The order will be produced and shipped to the designated shipping address for th
 ### Order Entry
 
 Orders may be placed in 1 of 2 ways:
-1) Orders are collected by the client in a CSV file and delivered to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) on a weekly or bi-weekly schedule.
-2) If the client is using a E-Commerce platform, such as Woo Commerce or Shopify, the client may be eligible to have their online store integrated with our production facility so as the client's customers purchase from the client's store it will seamlessly transfer the order details and put it into production. This option is available for no-customization or name/number customization products. To Learn how to setup products in an E-Commerce store and integrate with Full Gear follow this [link](https://bodaly.github.io/Integration_ReadMe.html).
+1. Orders are collected by the client in a CSV file and delivered to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) on a weekly or bi-weekly schedule.
+2. If the client is using a E-Commerce platform, such as Woo Commerce or Shopify, the client may be eligible to have their online store integrated with our production facility so as the client's customers purchase from the client's store it will seamlessly transfer the order details and put it into production. This option is available for no-customization or name/number customization products. To Learn how to setup products in an E-Commerce store and integrate with Full Gear follow this [link](https://bodaly.github.io/Integration_ReadMe.html).
 
 ### Product Design
 #### Who Designs the Product?
@@ -87,9 +87,9 @@ All product will be delivered directly to the end customer unless specifically r
 **THIS** <u>level of commitment</u> is available to any business that can commit **X** amount of unit-sales a month. Client will work with representatives to select **X** products the client will offer their customers.
 ### Order Entry
 Orders may be placed in 1 of 3 ways:
-1) Orders are collected by the client in a CSV file and delivered to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) on a weekly or bi-weekly schedule.
-2) If the client is using a E-Commerce platform, such as Woo Commerce or Shopify, the client may be eligible to have their online store integrated with our production facility so as the client's customers purchase from the client's store it will seamlessly transfer the order details and put it into production. This option is available for no-customization or name/number customization products.
-3) If the client is using Shopify, the client may be eligible to have our 3D Customizer embedded into their Shopify store which will allow for on the fly customization on each garment.
+1. Orders are collected by the client in a CSV file and delivered to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) on a weekly or bi-weekly schedule.
+2. If the client is using a E-Commerce platform, such as Woo Commerce or Shopify, the client may be eligible to have their online store integrated with our production facility so as the client's customers purchase from the client's store it will seamlessly transfer the order details and put it into production. This option is available for no-customization or name/number customization products.
+3. If the client is using Shopify, the client may be eligible to have our 3D Customizer embedded into their Shopify store which will allow for on the fly customization on each garment.
 
 ### Product Design
 #### Who Designs the Product?
