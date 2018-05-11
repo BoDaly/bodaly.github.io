@@ -20,6 +20,7 @@ There are three <u>levels of commitment</u>:
 ### Order Entry
 Order is placed by email to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) detailing: 
 * Styles | Designs | Quantity | Roster *(if applicable)* | Shipping Details
+
 ### Product Design
 1) Art assets are delivered to [customerservice@fullgear.com](mailto:customerservice@fullgear.com)
 	* All artwork submitted must be workable ai/pdf file. *(Workable means assets are not flattened or rasterized)*
