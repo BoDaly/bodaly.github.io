@@ -27,6 +27,7 @@ Order is placed by email to [customerservice@fullgear.com](mailto:customerservic
 3) Customer approves or rejects the mockup using our artwork approval portal.
 	* If the mockup is rejected, the notes will be followed for the correction and will be resubmitted for approval via the portal.
 4) Once approved The order will be sent to production and no changes will be allowed at this point.
+
 ### Delivery
 The order will be produced and shipped to the designated shipping address for the order.
 
