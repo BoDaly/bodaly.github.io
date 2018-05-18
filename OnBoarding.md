@@ -41,7 +41,7 @@ The order will be produced and shipped to the designated shipping address for th
 
 <h2 id="sb">Small-Business</h2>
 
-**THIS** <u>level of commitment</u> is available to any business that can commit between **500-999** unit-sales a month. Client will work with representatives to select up to **7** products the client will offer their customers.
+**THIS** <u>level of commitment</u> is available to any business that can commit between **500-999** unit-sales a month. Client will work with representatives to select up to **7** products *(product = style + design)* the client will offer their customers.
 
 ### Order Entry
 
@@ -90,7 +90,7 @@ All product will be delivered directly to the end customer unless specifically r
 
 <h2 id="enterprise">Enterprise</h2>
 
-**THIS** <u>level of commitment</u> is available to any business that can commit **1,000** or more unit-sales a month. Client will work with representatives to select up to **15** products the client will offer their customers. Full Gear will consider increasing the available products upon successful sales of the initial **15** products.
+**THIS** <u>level of commitment</u> is available to any business that can commit **1,000** or more unit-sales a month. Client will work with representatives to select up to **15** products *(product = style + design)*  the client will offer their customers. Full Gear will consider increasing the available products upon successful sales of the initial **15** products.
 
 ### Order Entry
 
