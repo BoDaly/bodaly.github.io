@@ -41,7 +41,7 @@ The order will be produced and shipped to the designated shipping address for th
 
 <h2 id="sb">Small-Business</h2>
 
-**THIS** <u>level of commitment</u> is available to any business that can commit **X** amount of unit-sales a month. Client will work with representatives to select **X** products the client will offer their customers.
+**THIS** <u>level of commitment</u> is available to any business that can commit between **500-999** unit-sales a month. Client will work with representatives to select up to **7** products the client will offer their customers.
 
 ### Order Entry
 
@@ -57,13 +57,13 @@ The client may decide between two options:
 
 **Stock Design:** Client may choose out of our extensive collection of stock designs that can be used at no additional cost to the client.
 
-**Full Custom:** The design will be primarily the resposibilty of the client. Full Gear can assist with creation of product design at a *premium* of **X**. Full Gear will provide the following upon request to facilitate the client doing all necessary artwork.
+**Full Custom:** The design will be primarily the resposibilty of the client. Full Gear can assist with creation of product design at a *premium* of **$85.00/hr**. Full Gear will provide the following upon request to facilitate the client doing all necessary artwork.
 * Mockup Templates
 	* Full Gear Mockup templates are Adobe Illustrator files and are actual size of the MD Garment.
 	* All Mockup Templates are housed [here](https://groupestahl-my.sharepoint.com/:f:/g/personal/odalyb_fullgear_com/EqhDcIKVEzVBjIOeZxdFobgB-1JvblbktAG1RVD98PZZ-Q?e=fReu3j) sorted by style. If the desired style is not available please send a request to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) and allow at least 24hrs for it to show up in the selection.
 * Illustrator Swatch Library with Full Gear Standard Athletic Colors.
 	* These colors as they are given in the swatches guarantee that the colors are consistent.
-	* We cannot guarantee accuracy of custom colors unless a color match is requested at a *premium* of **X**.
+	* We cannot guarantee accuracy of custom colors unless a color match is requested at a *premium* of **$50.00**.
 
 
 <header><h4 style="display:inline-block;"> How to Send Designs for Production</h4><span><i> (Full Custom Only)</i></span></header>
@@ -90,7 +90,7 @@ All product will be delivered directly to the end customer unless specifically r
 
 <h2 id="enterprise">Enterprise</h2>
 
-**THIS** <u>level of commitment</u> is available to any business that can commit **X** amount of unit-sales a month. Client will work with representatives to select **X** products the client will offer their customers.
+**THIS** <u>level of commitment</u> is available to any business that can commit **1,000** or more unit-sales a month. Client will work with representatives to select up to **15** products the client will offer their customers. Full Gear will consider increasing the available products upon successful sales of the initial **15** products.
 
 ### Order Entry
 
