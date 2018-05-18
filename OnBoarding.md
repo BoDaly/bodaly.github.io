@@ -113,7 +113,7 @@ The client may decide between two options:
 	* All Mockup Templates are housed [here](https://groupestahl-my.sharepoint.com/:f:/g/personal/odalyb_fullgear_com/EqhDcIKVEzVBjIOeZxdFobgB-1JvblbktAG1RVD98PZZ-Q?e=fReu3j) sorted by style. If the desired style is not available please send a request to [customerservice@fullgear.com](mailto:customerservice@fullgear.com) and allow at least 24hrs for it to show up in the selection.
 * Illustrator Swatch Library with Full Gear Standard Athletic Colors.
 	* These colors as they are given in the swatches guarantee that the colors are consistent.
-	* We cannot guarantee accuracy of custom colors unless a color match is requested at a *premium* of **X**.
+	* We cannot guarantee accuracy of custom colors unless a color match is requested at a *premium* of **$50.00**.
 
 
 <header><h4 style="display:inline-block;"> How to Send Designs for Production</h4><span><i> (Full Custom Only)</i></span></header>
