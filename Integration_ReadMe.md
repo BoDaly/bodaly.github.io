@@ -1,5 +1,7 @@
 # INTEGRATIONS
-## Woo Commerce Non-Custom Product Setup
+[Woo Commerce Integration](#woo)<br>
+[Shopify Integration](#shopify)
+<h2 id="woo">Woo Commerce Non-Custom Product Setup</h2>
 
 <b>1) Create Product Attributes</b>
   - Sizes (If your shop does not have already)
@@ -23,3 +25,6 @@
      - <a href = "https://docs.woocommerce.com/document/woocommerce-rest-api/">https://docs.woocommerce.com/document/woocommerce-rest-api/</a>
    - Send Consumer Key and Secret Key to:
      - bryan.odaly@fullgear.com
+     
+     
+<h2 id="shopify">Shopify Non-Custom Product Setup</h2>
