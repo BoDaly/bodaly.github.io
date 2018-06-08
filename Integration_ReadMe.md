@@ -1,4 +1,4 @@
-# INTEGRATIONS
+<h1 id="top">INTEGRATIONS</h1>
 [Woo Commerce Integration](#woo)<br>
 [Shopify Integration](#shopify)
 <h2 id="woo">Woo Commerce Non-Custom Product Setup</h2>
@@ -26,5 +26,9 @@
    - Send Consumer Key and Secret Key to:
      - bryan.odaly@fullgear.com
      
-     
+[top](#top)    
+
+
 <h2 id="shopify">Shopify Non-Custom Product Setup</h2>
+
+[top](#top)
