@@ -1,6 +1,8 @@
 <h1 id="top">INTEGRATIONS</h1>
+
 [Woo Commerce Integration](#woo)<br>
 [Shopify Integration](#shopify)
+
 <h2 id="woo">Woo Commerce Non-Custom Product Setup</h2>
 
 <b>1) Create Product Attributes</b>
