@@ -32,5 +32,9 @@
 
 
 <h2 id="shopify">Shopify Non-Custom Product Setup</h2>
-
+<b>1) Get API Keys</b>
+  - Follow instructions at this link
+    - <a href="https://help.shopify.com/api/getting-started/api-credentials">https://help.shopify.com/api/getting-started/api-credentials</a>
+  - Send Consumer Key and Secret Key to:
+    -bryan.odaly@fullgear.com
 [top](#top)
