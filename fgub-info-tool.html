@@ -5,12 +5,29 @@
     let docId = document.getElementById("docid").value
     document.getElementById("info").innerHTML = `<object type="text/html" data='https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Read?{	"config": "FullgearUB",	"ident": {		"sessionid": "947c6c7c-e7df-48a9-9ce5-46a0d5986af6",		"superuser": false	},	"model": {		"Id": "`+docId+`"	}}'></object>`
   }
+    function dl(){
+      let docId = document.getElementById("docid").value
+          // Construct the 'a' element
+    var link = document.createElement("a");
+    link.download = docId;
+    link.target = "_blank";
+
+    // Construct the URI
+    link.href = 'https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Export?{	"config": "FullgearUB",	"ident": {		"sessionid": "947c6c7c-e7df-48a9-9ce5-46a0d5986af6",		"superuser": false	},	"model": {		"Id": "`+docId+`"	}}';
+    document.body.appendChild(link);
+    link.click();
+
+    // Cleanup the DOM
+    document.body.removeChild(link);
+    delete link;
+}
+    }
   </script>
 </head>
 <body>
   <div>
   Doc ID: <br/>
-  <input type="text" id="docid"></input><button id="go_button" onclick="go()">go</button>
+  <input type="text" id="docid"></input><button id="go_button" onclick="go()">go</button><button id="dl_button" onclick="dl()">download</button>
   </div>
   <div id="info">
   </div>
