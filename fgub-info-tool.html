@@ -13,7 +13,7 @@
     link.target = "_blank";
 
     // Construct the URI
-    link.href = `https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Export?{	"config": "FullgearUB",	"ident": {		"sessionid": "947c6c7c-e7df-48a9-9ce5-46a0d5986af6",		"superuser": false	},	"model": {		"Id": "`+docId+`"	}}`;
+    link.href = `https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Export?{	"config": "FullgearUB",	"ident": {		"sessionid": "947c6c7c-e7df-48a9-9ce5-46a0d5986af6",		"superuser": false	},	"model": {		"Id": "`+docId+`", "FileName":"`+docId+`.pdf"	}}`;
     document.body.appendChild(link);
     link.click();
 
