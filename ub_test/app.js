@@ -1,4 +1,4 @@
-const Vue = import('vue/dist/vue.js');
+const Vue = import('node_modules/vue/dist/vue.js');
 const Builder = import('builder.vue');
 
 let app = new Vue({
