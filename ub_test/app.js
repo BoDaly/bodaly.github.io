@@ -1,5 +1,5 @@
-import Vue from 'vue/dist/vue.js';
-import Builder from 'builder.vue';
+const Vue = import('vue/dist/vue.js');
+const Builder = import('builder.vue');
 
 let app = new Vue({
   el:'#app',
