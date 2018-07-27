@@ -3,6 +3,7 @@
   <script>
   function go(){
     let docId = document.getElementById("docid").value
+
     document.getElementById("info").innerHTML = `<object type="text/html" data='https://fullgearub.cadworxase.p.azurewebsites.net/Core2/Doc/Read?{	"config": "CallOfDuty",	"ident": {		"sessionid": "1df25818-3eb8-4bc8-8a48-bad7a59bec53",		"superuser": false	},	"model": {		"Id": "`+docId+`"	}}'></object>`
   }
   </script>
