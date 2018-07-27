@@ -1,5 +1,5 @@
-import Vue from 'vue.js'
-import Builder from './builder.vue'
+import Vue from '/vue/dist/vue.js'
+import Builder from 'builder.vue'
 
 let app = new Vue({
   el:'#app',
