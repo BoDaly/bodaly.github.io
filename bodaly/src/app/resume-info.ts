@@ -5,7 +5,7 @@ import { Bullet } from './bullet'
 
 export const RESUME: Resume[] = [
   {
-    section:"software-developer",
+    section:"/software-developer",
     jobs: [
       {
         company_name:"Stahls' Full Gear",
@@ -40,7 +40,7 @@ export const RESUME: Resume[] = [
             name: "Artwork Automation",
             detail:"Fully automated custom artwork from a 3D builder into our Production Software.",
             languages:["Node.js","Azure"]
-          }
+          },
           {
             name: "Cronos ERP",
             detail:"Refactor UI for online Artwork Approval Form and Approval System.",
@@ -61,7 +61,7 @@ export const RESUME: Resume[] = [
     ]
   },
   {
-    section:"graphic-designer",
+    section:"/graphic-designer",
     jobs: [
       {
         company_name:"Stahls' Full Gear",
@@ -444,7 +444,7 @@ export const RESUME: Resume[] = [
       { name:'Illustrator', proficiency:9 },
       { name:'inDesign', proficiency:7 },
       { name:'Photoshop', proficiency:8 },
-      { name:'Art Direction', proficiency:5 }
+      { name:'Art Direction', proficiency:5 },
       { name:'Adobe JS', proficiency:9 },
       { name:'FireBase', proficiency:5 },
       { name:'Google Sheets', proficiency:6 },

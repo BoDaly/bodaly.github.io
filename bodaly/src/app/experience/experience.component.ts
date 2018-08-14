@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EventEmitterService } from '../event.emitter.service';
-import { Router } from '@angular/router'
 import { Resume } from '../resume';
 
 @Component({
@@ -11,9 +10,7 @@ import { Resume } from '../resume';
 export class ExperienceComponent implements OnInit {
   @Input() resume: Resume;
 
-  sub:Subscription;
-
-  constructor(private _eventEmitter: EventEmitterService , private router: Router) {}
+  constructor(private _eventEmitter: EventEmitterService) {}
 
   ngOnInit() {}
 

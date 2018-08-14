@@ -10,7 +10,6 @@ import { NgxImageGalleryComponent, GALLERY_IMAGE, GALLERY_CONF } from "ngx-image
 export class AppComponent implements OnInit {
   title = 'BRYAN O'+"'"+'DALY';
 
-  @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
   // get reference to gallery component
   @ViewChild(NgxImageGalleryComponent) ngxImageGallery: NgxImageGalleryComponent;
 
@@ -59,12 +58,12 @@ export class AppComponent implements OnInit {
 
   // next image in gallery
   nextImage(index: number = 0) {
-    this.ngxImageGallery.next(index);
+    this.ngxImageGallery.next();
   }
 
   // prev image in gallery
   prevImage(index: number = 0) {
-    this.ngxImageGallery.prev(index);
+    this.ngxImageGallery.prev();
   }
 
   /**************************************************/
