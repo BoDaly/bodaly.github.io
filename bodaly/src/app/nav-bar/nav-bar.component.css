@@ -1,0 +1,11 @@
+.logo {
+  max-width:92px !important;
+  max-height:56px;
+}
+.logo-text {
+  line-height: 52px;
+}
+.nav-bar {
+  width: 100%;
+  display:inline-block;
+}

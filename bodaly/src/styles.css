@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+html,body {
+  //overflow: hidden;
+  background-color:#6c757d;
+  height:100%;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.poke {
+  cursor: pointer;
+}
