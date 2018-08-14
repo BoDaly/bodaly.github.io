@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<body>
+<div class="bg-secondary no-scroll">
+  <app-nav-bar></app-nav-bar>
+  <div class="container pt-4 mb-4">
+    <router-outlet (triggerGallery)="openGallery()"></router-outlet>
+  </div>
+  <div class="spacer-bottom bg-secondary"></div>
+  <app-footer></app-footer>
+</div>
+<ngx-image-gallery
+[images]="images"
+[conf]="conf"
+(onOpen)="galleryOpened($event)"
+(onClose)="galleryClosed()"
+(onImageClicked)="galleryImageClicked($event)"
+(onImageChange)="galleryImageChanged($event)"
+(onDelete)="deleteImage($event)"
+></ngx-image-gallery>
+</body>

@@ -1,0 +1,43 @@
+<h2>BRYAN O'DALY</h2>
+<div class="border"></div>
+<label>Work Experience</label>
+<div *ngFor="let job of resume.jobs" class="card mb-2">
+  <div class="card-img-top bg-primary pl-3"><h4 class="text-white mb-1">{{job.company_name | uppercase}}</h4></div>
+  <div class="card-body">
+    <h5 class="card-title mb-2">{{job.title}}</h5>
+    <h6 class="card-subtitle text-muted mb-2">{{job.from}} - {{job.to}}</h6>
+    <div class="border border-light mb-2"></div>
+    <p class="card-text">
+      {{job.summary}}
+    </p>
+    <h6>Projects</h6>
+    <div class="d-flex justify-content-start flex-wrap">
+      <div class="card mr-3 list-group-item-light small-card mb-2" *ngFor="let bullet of job.bullets">
+        <img [attr.src]="bullet.thumb_url" (click)="openGallery(1,bullet.images)" class="card-img-top poke">
+        <div class="card-body">
+          <h5 class="card-title mb-2">{{bullet.name}}</h5>
+          <div class="border border-light mb-2"></div>
+          <p class="card-text">{{bullet.detail}}</p>
+          <div>
+            <span class="badge badge-light text-secondary border font-weight-light mr-1" *ngFor="let language of bullet.languages">{{language}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <ul class="list-group">
+      <li class="list-group-item list-group-item-light no-overflow" *ngFor="let bullet of job.bullets">
+        <div class="row">
+          <div *ngIf="bullet.thumb_url" class="mr-3 col">
+            <img [attr.src]="bullet.thumb_url" class="img-fluid list-item-image-fill">
+          </div>
+          <div class="col">
+            {{bullet.detail}}
+          </div>
+          <div class="col-3">
+            <span class="badge badge-light text-secondary border font-weight-light mr-1" *ngFor="let language of bullet.languages">{{language}}</span>
+          </div>
+        </div>
+      </li>
+    </ul> -->
+  </div>
+</div>
