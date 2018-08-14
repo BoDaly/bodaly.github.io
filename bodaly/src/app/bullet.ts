@@ -1,6 +1,7 @@
 import { GALLERY_IMAGE } from './GALLERY_IMAGE'
-export class Job {
+export class Bullet {
+  name: string;
   detail: string;
-  languages = [];
+  languages: any;
   images: GALLERY_IMAGE[] = []
 }

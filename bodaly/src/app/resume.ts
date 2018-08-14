@@ -3,6 +3,6 @@ import { Skill } from './skill'
 
 export class Resume {
   section: string;
-  jobs: Job[] = [];
-  skills: Skill[] = [];
+  jobs: any;
+  skills: any;
 }
