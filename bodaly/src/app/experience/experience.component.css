@@ -1,7 +1,21 @@
 .list-item-image-fill{
   margin: -.75rem 0 -.75rem -1.25rem;
 }
-.small-card {
-  width:177.75px;
-  max-width: 177.75px;
+
+.small-card-sm {
+  width:100%;
+  max-width:100%;
+}
+@media only screen and (min-width: 600px) {
+  .small-card-md{
+    width:calc(100%/2 - 10px);
+    max-width:calc(100%/2 - 10px);
+  }
+}
+@media only screen and (min-width: 990px) {
+  .small-card-lg{
+    width:calc(100%/3 - 10px);
+    max-width:calc(100%/3 - 10px);
+  }
+
 }

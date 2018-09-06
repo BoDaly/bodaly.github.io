@@ -1,4 +1,4 @@
-<h2>BRYAN O'DALY</h2>
+<div class="d-inline-block"><h2>BRYAN O'DALY</h2></div><div class="d-inline-block text-primary"><h6>{{resume.section | uppercase}}</h6></div>
 <div class="border"></div>
 <label>Work Experience</label>
 <div *ngFor="let job of resume.jobs" class="card mb-2">
@@ -11,8 +11,8 @@
       {{job.summary}}
     </p>
     <h6>Projects</h6>
-    <div class="d-flex justify-content-start flex-wrap">
-      <div class="card mr-3 list-group-item-light small-card mb-2" *ngFor="let bullet of job.bullets">
+    <div class="d-flex justify-content-between flex-wrap">
+      <div class="card list-group-item-light mb-2 small-card-lg small-card-md small-card-sm" *ngFor="let bullet of job.bullets">
         <img [attr.src]="bullet.thumb_url" (click)="openGallery(1,bullet.images)" class="card-img-top poke">
         <div class="card-body">
           <h5 class="card-title mb-2">{{bullet.name}}</h5>

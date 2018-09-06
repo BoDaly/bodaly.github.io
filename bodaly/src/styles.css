@@ -3,6 +3,8 @@
 html,body {
   //overflow: hidden;
   background-color:#6c757d;
+  background-image: url('./assets/img/bg.png');
+  background-repeat: round;
   height:100%;
 }
 .no-overflow {

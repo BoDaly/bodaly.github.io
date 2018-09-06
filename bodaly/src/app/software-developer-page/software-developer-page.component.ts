@@ -18,10 +18,10 @@ export class SoftwareDeveloperPageComponent implements OnInit {
   router:any;
 
   constructor(
-    private route: ActivatedRoute,
-    private resumeService: ResumeService,
-    private location: Location,
-    private _router: Router
+    public route: ActivatedRoute,
+    public resumeService: ResumeService,
+    public location: Location,
+    public _router: Router
 ) { this.router = _router }
 
 

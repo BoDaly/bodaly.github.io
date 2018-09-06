@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
   // gallery images
   images = [];
 
-  constructor(private _eventEmitter: EventEmitterService){
+  constructor(public _eventEmitter: EventEmitterService){
     this._eventEmitter.trigger.subscribe((data) => {
       switch(true){
         case(data.toggle === 1):

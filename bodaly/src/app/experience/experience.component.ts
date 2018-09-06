@@ -10,7 +10,7 @@ import { Resume } from '../resume';
 export class ExperienceComponent implements OnInit {
   @Input() resume: Resume;
 
-  constructor(private _eventEmitter: EventEmitterService) {}
+  constructor(public _eventEmitter: EventEmitterService) {}
 
   ngOnInit() {}
 

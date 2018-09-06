@@ -14,7 +14,7 @@ export const RESUME: Resume[] = [
         to:"Aug 2018",
         summary:"I began my Software Development Career at Full Gear with "
         +"creating simple apps using google spreadsheets "
-        +"to manage file delivery. I then began support "
+        +"to manage file delivery. I then began supporting "
         +"a very large application that used a number of "
         +"proprietary libraries. Along with this support "
         +"I helped in the rebuilding of an old web app into "
@@ -247,6 +247,31 @@ export const RESUME: Resume[] = [
             images:[
               {
                 url: "../assets/img/forge-apparel1.png",
+                altText: 'E-Sport Apparel Designs',
+                title: 'E-Sport Apparel Designs'
+              },
+              {
+                url: "../assets/img/forge-apparel2.png",
+                altText: 'E-Sport Apparel Designs',
+                title: 'E-Sport Apparel Designs'
+              },
+              {
+                url: "../assets/img/forge-apparel3.png",
+                altText: 'E-Sport Apparel Designs',
+                title: 'E-Sport Apparel Designs'
+              },
+              {
+                url: "../assets/img/forge-apparel4.png",
+                altText: 'E-Sport Apparel Designs',
+                title: 'E-Sport Apparel Designs'
+              },
+              {
+                url: "../assets/img/forge-apparel5.png",
+                altText: 'E-Sport Apparel Designs',
+                title: 'E-Sport Apparel Designs'
+              },
+              {
+                url: "../assets/img/forge-apparel6.png",
                 altText: 'E-Sport Apparel Designs',
                 title: 'E-Sport Apparel Designs'
               }
