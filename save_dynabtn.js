@@ -3,7 +3,7 @@ var dynamic = document.querySelector(".dynamic-button")
 var callback = function(mutationsList, observer) {
     for(var mutation of mutationsList) {
         if (mutation.type == 'childList') {
-            console.log('A child node has been added or removed.');
+            console.log('A child node has been added or removed:',mutation);
         }
         else if (mutation.type == 'attributes') {
             console.log('The ' + mutation.attributeName + ' attribute was modified.');
