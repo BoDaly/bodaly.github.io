@@ -5,5 +5,5 @@ for ( let span of spans ){
 }
 var buttons = dynamic.querySelectorAll("button")
 for ( let button of buttons ){
-    button.innerText = "More payment options"
+    button.innerText = "More payment options."
 }
