@@ -5,5 +5,5 @@ for ( let span of spans ){
 }
 var buttons = dynamic.querySelectorAll("button")
 for ( let button of buttons ){
-    button.setAttribute('data-skip-hko-acc', true)
+    button.innerText = "More payment options"
 }
