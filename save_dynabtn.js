@@ -23,5 +23,5 @@ var acallback = function(mutationsList, observer) {
 var observer = new MutationObserver(callback);
 var aobserver = new MutationObserver(acallback)
 
-observer.observe(dynamic, config);
-aobserver.observe(test, config)
+dynamic?observer.observe(dynamic, config):null;
+test?aobserver.observe(test, config):null;
