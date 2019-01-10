@@ -18,7 +18,6 @@ var callback = function(mutationsList, observer) {
 };
 
 var acallback = function(mutationsList, observer) {
-    debugger;
     for(var mutation of mutationsList){
         if(mutation.removedNodes.length > 0){
             for(var node of mutation.removedNodes){
