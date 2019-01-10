@@ -1,5 +1,6 @@
 var config = { attributes: true, childList: true, subtree: true };
 var dynamic = document.querySelector(".dynamic-button")
+var test = document.querySelector(".ql-editor")
 var callback = function(mutationsList, observer) {
     for(var mutation of mutationsList) {
         if (mutation.type == 'childList') {
@@ -15,6 +16,12 @@ var callback = function(mutationsList, observer) {
         }
     }
 };
+
+var acallback = function(mutationsList, observer) {
+    debugger;
+}
 var observer = new MutationObserver(callback);
+var aobserver = new MutationObserver(acallback)
 
 observer.observe(dynamic, config);
+observer.observe(test, config)
