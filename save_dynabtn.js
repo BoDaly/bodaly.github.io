@@ -24,4 +24,4 @@ var observer = new MutationObserver(callback);
 var aobserver = new MutationObserver(acallback)
 
 observer.observe(dynamic, config);
-observer.observe(test, config)
+aobserver.observe(test, config)
