@@ -22,7 +22,7 @@ var acallback = function(mutationsList, observer) {
     for(var mutation of mutationsList){
         if(mutation.removedNodes.length > 0){
             for(var node of mutation.removedNodes){
-                node.parentNode.appendChild(node)
+                node.parentNode?node.parentNode.appendChild(node):null
             }
         }
     }
