@@ -1,5 +1,5 @@
 var config = { attributes: true, childList: true, subtree: true };
-var dynamic = document.querySelector(".dynamic-button")
+var dynamic = document.querySelector(".shopify-cleanslate")
 var test = document.querySelector(".ql-editor")
 var callback = function(mutationsList, observer) {
     for(var mutation of mutationsList) {
