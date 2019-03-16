@@ -19,7 +19,7 @@ var callback = function(mutationsList, observer) {
 
 var acallback = function(mutationsList, observer) {
     for(var mutation of mutationsList){
-        console.log(mutation)
+        console.log('Mutated: ',mutation)
     }
 }
 var observer = new MutationObserver(callback);
