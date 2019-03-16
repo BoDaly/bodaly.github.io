@@ -1,6 +1,6 @@
 var config = { attributes: true, childList: true, subtree: true };
 var dynamic = document.querySelector(".shopify-payment-button")
-var test = document.querySelector(".ql-editor")
+var test = document.querySelector(".ProductForm")
 var callback = function(mutationsList, observer) {
     for(var mutation of mutationsList) {
         if (mutation.type == 'childList') {
@@ -19,11 +19,7 @@ var callback = function(mutationsList, observer) {
 
 var acallback = function(mutationsList, observer) {
     for(var mutation of mutationsList){
-        if(mutation.removedNodes.length > 0){
-            for(var node of mutation.removedNodes){
-                //mutation.target?mutation.target.appendChild(node):null
-            }
-        }
+        console.log(mutation)
     }
 }
 var observer = new MutationObserver(callback);
