@@ -8,6 +8,30 @@ export const RESUME: Resume[] = [
     section:"/software-developer",
     jobs: [
       {
+        company_name:"Monumental",
+        title:"Full-stack Developer",
+        from:"March 2019",
+        to:"Sept 2020",
+        summary:`Monumental is a E-Commerce Solutions Agency. We primarily worked in Shopify building and modifying themes. In addition we built private apps and cloud solution middlewear for API integration.`,
+        bullets:[
+          {
+            name: "Private Apps",
+            detail:`Built Shopify Apps as little as a simple app proxy to a bigger full UI app`,
+            languages:["JS", "Liquid", "React", "Vue", "AWS[Lambda]", "Firebase"]
+          },
+          {
+            name: "E-Commerce Integrations",
+            detail: "Integrated 3rd Party apps and proprietary APIs into Shopify.",
+            languages:["Node.Js","AWS[Lambda]","Firebase"]
+          },
+          {
+            name:"Theme Management/ Developement",
+            detail:"Created new themes and modified existing Shopify themes to Client Specifications",
+            languages:["JS", "HTML5", "CSS/SCSS", "Liquid", "Vue"]
+          }
+        ]
+      },
+      {
         company_name:"Stahls' Full Gear",
         title:"Software Developer",
         from:"Jan 2018",
@@ -50,14 +74,18 @@ export const RESUME: Resume[] = [
       }
     ],
     skills: [
+      { name:'HTML5', proficiency:8 },
+      { name:'JavaScript', proficiency:8 },
+      { name:'Vue.js', proficiency:8 },
+      { name:'AWS[Lambda]', proficiency:6 },
+      { name:'AWS[DynamoDB]', proficiency:6 },
+      { name:'Firebase', proficiency:7 },
+      { name:'Node.js', proficiency:8 },
+      { name:'React', proficiency:3 },
       { name:'Angular', proficiency:3 },
-      { name:'JavaScript', proficiency:7 },
-      { name:'Vue.js', proficiency:7 },
       { name:'Azure', proficiency:5 },
       { name:'Bootstrap', proficiency:7 },
       { name:'Rails', proficiency:2 },
-      { name:'Node.js', proficiency:7 },
-      { name:'FireBase', proficiency:5 }
     ]
   },
   {
